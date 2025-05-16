@@ -68,7 +68,7 @@ export const makePayment = async (paymentData) => {
   const url = `${BASE_URL}${CHECKOUT_URL}`;
   const headers = {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${process.env.API_KEY}`,
+    "x-arifpay-key": `${process.env.API_KEY}`,
   };
   const nonce = uuidv4();
 
@@ -89,4 +89,3 @@ export const makePayment = async (paymentData) => {
   const response = await axios.post(url, payload, { headers });
   return response.data;
 };
-
