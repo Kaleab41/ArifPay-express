@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 require("dotenv").config();
-const uuid = require("uuid");
+import { v4 as uuidv4 } from "uuid";
 
 const BASE_URL = process.env.BASE_URL || "http://gateway.arifpay.net/api";
 const CHECKOUT_URL = process.env.CHECKOUT_URL || "/checkout/session";
