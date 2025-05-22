@@ -1,11 +1,8 @@
 // Check if phone number is Ethiopian: starts with +251
 // Must have 9 digits after +251 (total 13 digits, digits only)
 export const isValidEthiopianPhoneNumber = function (phone) {
-  if (phone.startsWith("251") && !phone.startsWith("+")) {
-    phone = `+${phone}`;
-  }
-  //Check if the phone number starts with +251 preceded with a 7 or 9 and has 9 digits after it
-  const isValid = /^\+251[79]\d{8}$/.test(phone);
+  //Check if the phone number starts with 251 preceded with a 7 or 9 and has 9 digits after it
+  const isValid = /^251[79]\d{8}$/.test(phone);
   return isValid ? phone : null;
 };
 
